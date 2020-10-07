@@ -4,6 +4,8 @@ import 'package:floor_calculator/helpers/validator_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../helpers/validator_helper.dart';
+
 class CalculatorPage extends StatefulWidget {
   @override
   _CalculatorPageState createState() => _CalculatorPageState();
@@ -18,6 +20,15 @@ class _CalculatorPageState extends State<CalculatorPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Calculadora de pisos'),
+        actions: [
+          IconButton(
+              icon: Icon(
+                Icons.cake,
+                color: Colors.white,
+              ),
+              tooltip: "Limpa tuuuuuuudoooo",
+              onPressed: _clearFields)
+        ],
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -57,6 +68,14 @@ class _CalculatorPageState extends State<CalculatorPage> {
             'Comprimento (centímetros)',
             onSaved: _controller.setFloorLength,
           ),
+          // adicionado novo campo para colocar valor
+          // para que o pograma calcule
+          _buildVerticalSpace(),
+          _buildHeaderText('Preço do Piso (Inclui rodapés)'),
+          _buildVerticalSpace(),
+          _buildNumberInputField('Preço (R\$/m²)',
+              onSaved: _controller.setPricePerSqMeter,
+              validator: ValidatorHelper.isNegativeOrZero),
           _buildVerticalSpace(height: 40),
           _buildCalculateButton(),
         ],
@@ -64,14 +83,25 @@ class _CalculatorPageState extends State<CalculatorPage> {
     );
   }
 
-  _buildNumberInputField(String label, {Function(String) onSaved}) {
+  _clearFields() {
+    setState(() {
+      _formKey.currentState.reset();
+    });
+  }
+
+  // modificado este método para receber o validador por parâmetro
+  // para passar um validador diferente para o campo de denaros
+  _buildNumberInputField(String label,
+      {Function(String) onSaved, Function(String) validator}) {
     return TextFormField(
       onSaved: onSaved,
       decoration: InputDecoration(
         border: OutlineInputBorder(),
         labelText: label,
       ),
-      validator: ValidatorHelper.isValidText,
+      // alterado o validador para defaultar em isvalidtext mas aceitar o paraâmetro
+      // caso o user passe uma função helper diferente
+      validator: validator ?? ValidatorHelper.isValidText,
       keyboardType: TextInputType.number,
     );
   }

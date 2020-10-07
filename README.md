@@ -1,3 +1,6 @@
+Aplicativo de uma calculadora de pisos e revestimentos criado para a disciplina de Programação
+Mobile, criado por Kleber de Oliveira Andrade. Desafio resolvido por Beatriz Santos Camargo
+
 # Calculadora de pisos e revestimentos
 
 Aplicativo de uma calculadora de pisos e revestimentos criado para disciplina de Programação Mobile, criado por Kleber de Oliveira Andrade
@@ -20,11 +23,11 @@ Tutorial de criação deste app: [clique aqui](https://medium.com/@kleberandrade
 
 ## Desafio para aula
 
-*   [ ] Adicionar um novo atributo (price) na classe FloorModel e um novo campo numérico no CalculatorPage para o usuário digitar o preço;
-*   [ ] Criar uma função para calcular o preço na classe Controller e exibir o resultado no ResultDialog;
-*   [ ] Validar os campos de entrada para quando o usuário digitar valores negativos ou zero;
-*   [ ] Criar uma função para limpar (zerar) os campos do formulário;
-*   [ ] Criar um ícone para o aplicativo ([plugin flutter_launcher_icons](https://pub.dev/packages/flutter_launcher_icons), [gerador de ícone](https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html). Exemplo de como inserir imagens no flutter, [clique aqui](https://medium.com/@suragch/how-to-include-images-in-your-flutter-app-863889fc0b29).
+*   [x] Adicionar um novo atributo (price) na classe FloorModel e um novo campo numérico no CalculatorPage para o usuário digitar o preço;
+*   [x] Criar uma função para calcular o preço na classe Controller e exibir o resultado no ResultDialog;
+*   [x] Validar os campos de entrada para quando o usuário digitar valores negativos ou zero;
+*   [x] Criar uma função para limpar (zerar) os campos do formulário;
+*   [x] Criar um ícone para o aplicativo ([plugin flutter_launcher_icons](https://pub.dev/packages/flutter_launcher_icons), [gerador de ícone](https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html). Exemplo de como inserir imagens no flutter, [clique aqui](https://medium.com/@suragch/how-to-include-images-in-your-flutter-app-863889fc0b29).
 
 ## Licença
 

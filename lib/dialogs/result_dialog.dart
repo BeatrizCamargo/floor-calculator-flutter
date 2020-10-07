@@ -33,6 +33,11 @@ class ResultDialog extends StatelessWidget {
             title: Text('${result.areaWithFooter.toStringAsFixed(2)} m²'),
             subtitle: Text('Metragem quadrada com rodapé'),
           ),
+          // definido novo campo no resultdialog para mostrar o valor calculado do piso
+          ListTile(
+            title: Text('R\$ ${result.getPrice.toStringAsFixed(2)}'),
+            subtitle: Text('Preço do metro quadrado (em R\$)'),
+          )
         ],
       ),
       actions: [
